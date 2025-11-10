@@ -1,0 +1,63 @@
+/* style.css - simple clean layout */
+:root {
+  --bg: #f7f8fb;
+  --card: #ffffff;
+  --accent: #2b6ef6;
+  --muted: #6b7280;
+  --success: #16a34a;
+  --danger: #dc2626;
+}
+
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:#111827;
+}
+
+.container{
+  max-width:720px;
+  margin:36px auto;
+  padding:24px;
+  background:var(--card);
+  border-radius:12px;
+  box-shadow:0 6px 22px rgba(17,24,39,0.06);
+}
+
+header h1{margin:0;font-size:28px}
+header .tagline{color:var(--muted);margin-top:6px;font-size:13px}
+
+.mx-form{margin-top:18px}
+.row{display:flex;flex-direction:column;margin-bottom:12px}
+.row label{font-size:13px;margin-bottom:6px;color:var(--muted)}
+.row input,
+.row textarea{
+  padding:10px 12px;
+  border:1px solid #e6e9ef;
+  border-radius:8px;
+  font-size:14px;
+  outline:none;
+}
+.row input:focus,
+.row textarea:focus{box-shadow:0 0 0 3px rgba(43,110,246,0.08);border-color:var(--accent)}
+
+.actions{display:flex;justify-content:flex-end}
+button{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:10px 16px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+}
+button:hover{opacity:0.95}
+
+.flash-wrapper{margin-bottom:12px}
+.flash{padding:10px 12px;border-radius:8px;margin-bottom:8px;font-weight:600}
+.flash.success{background:rgba(22,163,74,0.12);color:var(--success)}
+.flash.danger{background:rgba(220,38,38,0.08);color:var(--danger)}
+
+footer{margin-top:16px;color:var(--muted);font-size:13px}
+code{background:#f3f4f6;padding:2px 6px;border-radius:6px;font-size:12px}

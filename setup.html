@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <title>XMail Setup</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+  <h1>SMTP Setup</h1>
+  <p>Enter your email provider's SMTP credentials.</p>
+
+  <form method="POST">
+    <div class="row">
+      <label>SMTP Server</label>
+      <input name="smtp_server" placeholder="smtp.gmail.com" required>
+    </div>
+
+    <div class="row">
+      <label>SMTP Port</label>
+      <input name="smtp_port" value="587" required>
+    </div>
+
+    <div class="row">
+      <label>Email / Username</label>
+      <input name="smtp_user" placeholder="your@gmail.com" required>
+    </div>
+
+    <div class="row">
+      <label>Password / App Password</label>
+      <input name="smtp_pass" type="password" required>
+    </div>
+
+    <button type="submit">Save & Continue</button>
+  </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>XMail — Send test email</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>XMail</h1>
+      <p class="tagline">Simple SMTP email sender (Flask)</p>
+    </header>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-wrapper">
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <form method="post" class="mx-form">
+      <div class="row">
+        <label>From name</label>
+        <input name="from_name" required placeholder="Your name">
+      </div>
+
+      <div class="row">
+        <label>From email</label>
+        <input name="from_email" type="email" required placeholder="you@example.com">
+      </div>
+
+      <div class="row">
+        <label>To email</label>
+        <input name="to_email" type="email" required placeholder="recipient@example.com">
+      </div>
+
+      <div class="row">
+        <label>Subject</label>
+        <input name="subject" required placeholder="Subject">
+      </div>
+
+      <div class="row">
+        <label>Message</label>
+        <textarea name="body" rows="8" placeholder="Write your message here..." required></textarea>
+      </div>
+
+      <div class="row actions">
+        <button type="submit">Send Email</button>
+      </div>
+    </form>
+
+    <footer>
+      <p>Do not commit your <code>.env</code> with credentials. Use <code>.env.example</code> as template.</p>
+    </footer>
+  </div>
+</body>
+</html>
